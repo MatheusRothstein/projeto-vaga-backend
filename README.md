@@ -21,11 +21,8 @@ A API da ACMEVita permite o gerenciamento de departamentos, colaboradores e seus
 
 ### Requisitos
 
-- Python 3.7 ou superior
-- FastAPI
-- SQLAlchemy
-- Pydantic
-- Banco de dados (SQLite, PostgreSQL, etc.)
+- Docker
+- Docker-compose
 
 ### Link para a documentação das rotas
 http://localhost:8000/docs
