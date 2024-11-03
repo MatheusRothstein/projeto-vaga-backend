@@ -15,6 +15,9 @@ A API da ACMEVita permite o gerenciamento de departamentos, colaboradores e seus
   - **routers/**
     - **departamento.py**: Roteador para endpoints de departamentos.
     - **empregados.py**: Roteador para endpoints de empregados.
+  - **tests**
+    - **test_crud.py**
+    - **test_routers.py**
 
 ### Requisitos
 
