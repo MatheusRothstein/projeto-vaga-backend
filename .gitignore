@@ -1,5 +1,6 @@
 .venv/
 acmevita.db
 postgres_data/
+test.db
 __pycache__/
 .env

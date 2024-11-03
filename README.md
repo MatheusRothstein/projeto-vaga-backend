@@ -1,45 +1,54 @@
-# ACMEVita
+# Documentação da API ACMEVita
 
-Projeto de modelagem de dados e criação de uma API utilizando Python e qualquer framework de sua escolha (Flask, FastAPI, Django etc).
+## Visão Geral
 
-**Este projeto é parte do processo de seleção de desenvolvedor backend da [Telavita](https://telavita.com.br).**
+A API da ACMEVita permite o gerenciamento de departamentos, colaboradores e seus dependentes. O sistema foi desenvolvido utilizando o framework FastAPI e SQLAlchemy, e fornece endpoints para criar, consultar e gerenciar dados de forma eficiente.
 
-## Sobre o projeto
+### Estrutura do Projeto
 
-A ACMEVita está expandindo seus negócios e precisa de um sistema para gerenciar seus departamentos, colaboradores e dependentes.
-
-O seu único desenvolvedor backend está de ferias, você foi recrutado para finalizar este projeto, boa sorte!
+- **app/**
+  - **main.py**: Ponto de entrada da aplicação.
+  - **models.py**: Definições dos modelos de dados utilizando SQLAlchemy.
+  - **schemas.py**: Esquemas de validação utilizando Pydantic.
+  - **crud.py**: Funções de acesso aos dados (CRUD).
+  - **database.py**: Configurações de conexão com o banco de dados.
+  - **routers/**
+    - **departamento.py**: Roteador para endpoints de departamentos.
+    - **empregados.py**: Roteador para endpoints de empregados.
 
 ### Requisitos
 
-#### Como um Usuário da API eu gostaria de consultar todos os departamentos para visualizar a organização da ACMEVita.
+- Python 3.7 ou superior
+- FastAPI
+- SQLAlchemy
+- Pydantic
+- Banco de dados (SQLite, PostgreSQL, etc.)
 
-* Cada departamento deve possuir um *nome do departamento*.
-* A API deve responder com uma listagem de departamentos no formato JSON informando o *nome do departamento* de cada departamento.
+### Link para a documentação das rotas
+http://localhost:8000/docs
 
-#### Como um Usuário da API eu gostaria de consultar todos os colaboradores de um departamento para visualizar a organização da ACMEVita.
+## Instalando o Ambiente
 
-* Cada colaborador deve possuir um *nome completo*.
-* Cada colaborador deve pertencer a *um* departamento.
-* Cada colaborador pode possuir *nenhum, um ou mais* dependententes.
-* A API deve responder com uma listagem de colaboradores do departamento no formato JSON informando o *nome completo* de cada colaborador e a respectiva flag booleana `have_dependents` caso o colaborador possua *um ou mais dependentes*.
+1. **Clone o repositório:**
 
-### Diferenciais
+  ```bash
+   git clone https://github.com/seu_usuario/acmevita.git
+   cd acmevita
+   ```
 
-* Testes unitários
-* Referência (Swagger ou similar)
-* Documentação e instruções de configuração
-* Separação das camadas de responsabilidade (modelagem de dados, serialização, regras de negócio, etc)
-* Conteinerização
+2. **Construindo a imagem docker:**
 
-### Instruções
+  ```bash
+  docker-compose build
+  ```
 
-1. Faça um _fork_ ou download deste projeto.
-2. Trabalhe localmente no seu projeto, faça até o ponto que conseguir.
-3. Você está livre para organizar a estrutura do projeto como preferir.
-4. Você deve utilizar o framework escolhido para criar os endpoints da API.
-5. Você pode utilizar a ORM de sua preferência para modelagem de dados.
-6. Suba o seu projeto para o GitHub e habilite a funcionalidade de Issues.
-7. Nos envie o link para o seu projeto, **mesmo que não esteja finalizado!**
+3. **Executando a aplicação**
+  ```bash
+  docker-compose up
+  ```
 
-**Qualquer dúvida, [entre em contato](mailto:jc@telavita.com.br)!**
+4. **Rodando os testes**
+  ```bash
+  docker-compose exec web bash
+  pytest -v
+  ```
