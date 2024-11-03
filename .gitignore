@@ -1,0 +1,4 @@
+.venv/
+acmevita.db
+__pycache__/
+.env
